@@ -1,0 +1,20 @@
+﻿
+@model Order
+
+<h2>This is order number: @Model.Id </h2>
+<ul>
+    <li>Order ID: @Model.Id </li>
+    <li>User ID: @Model.UserId</li>
+    <li>Pizzas Ordered:
+        <ul>
+            @{
+                foreach(var pizza in @Model.GetPizzas())
+                {
+                    <li>Pizza Name: @pizza.Name | Price: @pizza.Price</li>
+                }
+             }
+        </ul>
+    </li>
+    <li>Total Price: @Model.GetTotalPrice()</li>
+    <li>Odered at: @Model.OrderDate</li>
+</ul>
