@@ -1,0 +1,10 @@
+﻿@model List<UserViewModel>
+
+<h2>All Users Full Name</h2>
+
+<ul>
+    @foreach(var user in @Model)
+    {
+        <li>@user.FullName</li>
+    }
+</ul>
