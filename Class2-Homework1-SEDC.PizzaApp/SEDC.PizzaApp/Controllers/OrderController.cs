@@ -39,12 +39,17 @@ namespace SEDC.PizzaApp.Controllers
                 PizzaId = 2,
             };
 
-            return View(jsonDataExample);
+            return new JsonResult(jsonDataExample);
         }
 
         public IActionResult Redirect()
         {
             return RedirectToAction("Index", "Home");
+        }
+
+        public IActionResult Error()
+        {
+            return View();
         }
 
     }
